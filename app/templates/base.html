@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}D1 Friseur - Bremen{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+<body>
+
+<header class="header">
+    <img src="https://www.cdu-bremen.de/sites/default/files/styles/quadrat_800x800_/public/2020-07/dorothea-bozena-lutze-portrait.jpg?itok=WOM6L9Au" alt="D1 Friseur" class="header-img">
+    <h1 class="header-title">D1 Friseur - Doro Lutze</h1>
+</header>
+
+<nav class="navigation">
+    <a href="#">Startseite</a>
+    <a href="#">Leistungen</a>
+    <a href="#">Über Doro Lutze</a>
+    <a href="#">Kontakt & Anfahrt</a>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-text">
+            <p>© 2023 D1 Friseur Dorothea Lutze - Bremen</p>
+        </div>
+        <div class="footer-links">
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+        </div>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
