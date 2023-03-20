@@ -44,11 +44,14 @@ jobs:
 
       - name: Install Ansible
         run: pip install ansible
+        
+      - name: Add SSH Private Key  
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+            ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY_INFRASTRUCTURE }}
 
       - name: Add Infrastructure hosts
         run: cd ansible && echo [infrastructure] > inventory.txt && echo ${{ secrets.HOSTS_INFRASTRUCTURE }} >> inventory.txt && cat inventory.txt
 
       - name: Deploy Docker image using Ansible
         run: cd ansible && ansible-playbook -i inventory.txt deploy_docker_image.yml -e "docker_image_tag=${{ github.run_id }}"
-        env:
-          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_INFRASTRUCTURE }}
