@@ -1,0 +1,25 @@
+- name: Deploy Docker Image on Infrastructure Server
+  hosts: infrastructure
+  user: ansible
+  become: yes
+  tasks:
+    - name: Ensure Docker is installed
+      ansible.builtin.package:
+        name: docker
+        state: present
+
+    - name: Ensure Docker is running
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Pull and run the Docker image
+      ansible.builtin.docker_container:
+        name: d1-friseur-web
+        image: "felixlutze/d1-friseur-web:{{ docker_image_tag }}"
+        state: started
+        recreate: yes
+        pull: yes
+        published_ports:
+          - "8001:8001"

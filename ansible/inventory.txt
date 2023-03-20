@@ -1,0 +1,2 @@
+[infrastructure]
+your_centos_server_ip ansible_user=your_ansible_user ansible_ssh_private_key_file=/path/to/your/private_key
