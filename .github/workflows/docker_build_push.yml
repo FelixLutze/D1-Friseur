@@ -46,7 +46,7 @@ jobs:
         run: pip install ansible
 
       - name: Add Infrastructure hosts
-        run: cd ansible && echo [infrastructure] > inventory.txt && ${{ secrets.HOSTS_INFRASTRUCTURE }} >> inventory.txt && cat inventory.txt
+        run: cd ansible && echo [infrastructure] > inventory.txt && echo ${{ secrets.HOSTS_INFRASTRUCTURE }} >> inventory.txt && cat inventory.txt
 
       - name: Deploy Docker image using Ansible
         run: cd ansible && ansible-playbook -i inventory.txt deploy_docker_image.yml -e "docker_image_tag=${{ github.run_id }}"
