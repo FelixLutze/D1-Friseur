@@ -2,6 +2,7 @@
   hosts: infrastructure
   user: ansible
   become: yes
+  gather_facts: false
   tasks:
     - name: Ensure Docker is running
       ansible.builtin.service:
