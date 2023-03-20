@@ -3,11 +3,6 @@
   user: ansible
   become: yes
   tasks:
-    - name: Ensure Docker is installed
-      ansible.builtin.package:
-        name: docker
-        state: present
-
     - name: Ensure Docker is running
       ansible.builtin.service:
         name: docker
