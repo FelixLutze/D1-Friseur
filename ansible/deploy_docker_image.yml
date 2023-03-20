@@ -12,7 +12,7 @@
     - name: Pull and run the Docker image
       ansible.builtin.docker_container:
         name: d1-friseur-web
-        image: "felixlutze/d1-friseur-web:{{ docker_image_tag }}"
+        image: "felixlutze/d1-friseur:web-{{ docker_image_tag }}"
         state: started
         recreate: yes
         pull: yes
