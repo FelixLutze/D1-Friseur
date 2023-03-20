@@ -1,14 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="introduction">
-    <h2>Über D1 Friseur Doro Lutze</h2>
-    <p>Herzlich willkommen bei D1 Friseur Doro Lutze, Ihrem professionellen Haarstudio in Bremen. Mit jahrelanger Erfahrung und Leidenschaft für unser Handwerk bieten wir Ihnen individuelle Stylings, Haarschnitte und Farbveränderungen. Wir legen großen Wert auf eine persönliche Beratung, um den perfekten Look für Sie zu kreieren.</p>
+<section class="introduction py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h2>Über D1 Friseur Doro Lutze</h2>
+                <p>Herzlich willkommen bei D1 Friseur Doro Lutze, Ihrem professionellen Haarstudio in Bremen. Mit jahrelanger Erfahrung und Leidenschaft für unser Handwerk bieten wir Ihnen individuelle Stylings, Haarschnitte und Farbveränderungen. Wir legen großen Wert auf eine persönliche Beratung, um den perfekten Look für Sie zu kreieren.</p>
+            </div>
+            <div class="col-12 col-md-6">
+<!--                <img src="{{ url_for('static', filename='images/intro-img.jpg') }}" alt="D1 Friseur" class="img-fluid">-->
+                <img src="https://www.cdu-bremen.de/sites/default/files/styles/quadrat_800x800_/public/2020-07/dorothea-bozena-lutze-portrait.jpg?itok=WOM6L9Au" alt="D1 Friseur" class="img-fluid">
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="booking">
-    <h2>Buchen Sie Ihren Termin jetzt!</h2>
-    <p>Wir freuen uns darauf, Sie in unserem Salon zu begrüßen. Buchen Sie Ihren Termin noch heute und lassen Sie sich von unserem erfahrenen Team verwöhnen.</p>
-    <a href="#" class="booking-btn">Termin buchen</a>
+<section class="booking py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <h2>Buchen Sie Ihren Termin jetzt!</h2>
+                <p>Wir freuen uns darauf, Sie in unserem Salon zu begrüßen. Buchen Sie Ihren Termin noch heute und lassen Sie sich von unserem erfahrenen Team verwöhnen.</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <a href="#" class="btn btn-primary w-100">Termin buchen</a>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock %}

@@ -4,38 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}D1 Friseur - Bremen{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main-styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Custom CSS -->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/main-styles.css') }}">-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">-->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="header">
-    <img src="https://www.cdu-bremen.de/sites/default/files/styles/quadrat_800x800_/public/2020-07/dorothea-bozena-lutze-portrait.jpg?itok=WOM6L9Au" alt="D1 Friseur" class="header-img">
-    <h1 class="header-title">D1 Friseur - Doro Lutze</h1>
+<header class="header bg-white">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">D1 Friseur</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Startseite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Leistungen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Über Doro Lutze</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontakt & Anfahrt</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 </header>
-
-<nav class="navigation">
-    <a href="#">Startseite</a>
-    <a href="#">Leistungen</a>
-    <a href="#">Über Doro Lutze</a>
-    <a href="#">Kontakt & Anfahrt</a>
-</nav>
 
 {% block content %}
 {% endblock %}
 
-<footer class="footer">
+<footer class="footer bg-white">
     <div class="container">
-        <div class="footer-text">
-            <p>© 2023 D1 Friseur Dorothea Lutze - Bremen</p>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h5 class="mb-3">Kontakt</h5>
+                <p class="mb-2">D1 Friseur Dorothea Lutze</p>
+                <p class="mb-2">Musterstr. 123</p>
+                <p class="mb-2">28199 Bremen</p>
+                <p class="mb-2">Tel.: 0123 / 456789</p>
+                <p class="mb-2">E-Mail: info@d1-friseur.de</p>
+            </div>
+            <div class="col-12 col-md-6">
+                <h5 class="mb-3">Öffnungszeiten</h5>
+                <p class="mb-2">Montag - Freitag: 9:00 - 18:00 Uhr</p>
+                <p class="mb-2">Samstag: 9:00 - 14:00 Uhr</p>
+            </div>
         </div>
-        <div class="footer-links">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
+        <hr>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <p class="mb-2">&copy; 2023 D1 Friseur Dorothea Lutze - Bremen</p>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="d-flex justify-content-end">
+                    <a href="#" class="me-3">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
 
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
 </body>
 </html>
